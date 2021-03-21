@@ -6,38 +6,18 @@
     <link rel="stylesheet" href="./css/resset.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
+    <script src="./js/main.js"></script>
+
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <!-- fontawesome -->
     <script
       src="https://kit.fontawesome.com/a910cde669.js"
       crossorigin="anonymous"
-    >
-        function addAge() {
-          let today = new Date();
-          const bd = new Date(2000, 6, 29);
-          let diffInDays = Math.floor(
-            (today.getTime() - bd.getTime()) / (1000 * 3600 * 24)
-          );
-          let years = Math.floor(diffInDays / 365);
-
-          document.getElementById("age").innerText = years;
-        }
-
-        function addEmail() {
-          const email = document.getElementById("email-text").innerHTML;
-          document.getElementsByClassName("email-me")[0].innerHTML = "mailto:" + email;
-          contactMeBtn.href = "mailto:" + email;
-        }
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-          console.log('DOM fully loaded and parsed');
-          addAge();
-          addEmail();
-      });
-    </script>
+    ></script>
   </head>
   <body>
     <div class="bg-container">
@@ -85,7 +65,7 @@
           </li>
         </ul>
 
-        <a class="email-me" href="mailto:">EMAIL ME</a>
+        <a class="btn" id="email-me-btn" href="mailto:">EMAIL ME</a>
       </div>
     </div>
   </body>
