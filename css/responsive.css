@@ -1,0 +1,10 @@
+/* for mobile device screens */
+@media screen and (max-width: 768px) {
+  .bg-container {
+    padding: 48px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+}
