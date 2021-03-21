@@ -5,7 +5,7 @@
     <title>My Resume: Sukrit Banthao</title>
     <link rel="stylesheet" href="./css/resset.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/responsive.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
@@ -15,17 +15,29 @@
       src="https://kit.fontawesome.com/a910cde669.js"
       crossorigin="anonymous"
     >
-      function addAge() {
-        let today = new Date();
-        const bd = new Date(2000, 6, 29);
-        let diffInDays = Math.floor(
-          (today.getTime() - bd.getTime()) / (1000 * 3600 * 24)
-        );
-        let years = Math.floor(diffInDays / 365);
+        function addAge() {
+          let today = new Date();
+          const bd = new Date(2000, 6, 29);
+          let diffInDays = Math.floor(
+            (today.getTime() - bd.getTime()) / (1000 * 3600 * 24)
+          );
+          let years = Math.floor(diffInDays / 365);
 
-        let span = document.getElementById("age");
-        span.innerText = 20;
-      }
+          let span = document.getElementById("age");
+          span.innerText = years;
+        }
+
+        function makeEmailMeBtn() {
+          const email = document.getElementById("email-text").innerText;
+          let contactMeBtn = document.getElementsByClassName("email-me");
+          contactMeBtn.href = "mailto:" + email;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+          console.log('DOM fully loaded and parsed');
+          addAge();
+          makeEmailMeBtn();
+      });
     </script>
   </head>
   <body>
@@ -40,10 +52,10 @@
 
         <p class="job">Computer Engineering Student</p>
         <p class="about">
-          I am <span id="age" onload="addAge()"></span> years old. I am
-          currently a computer engineering student at Chulalongkorn University,
-          Thailand. I love coding, playing games, badminton, and cats. My dream
-          is to travel around the world.
+          I am <span id="age"></span> years old. I am currently a computer
+          engineering student at Chulalongkorn University, Thailand. I love
+          coding, playing games, badminton, and cats. My dream is to travel
+          around the world.
         </p>
 
         <hr style="margin-bottom: 15px" />
@@ -74,7 +86,7 @@
           </li>
         </ul>
 
-        <a class="email-me" href="mailto:arm.xdsk@hotmail.com">EMAIL ME</a>
+        <a class="email-me" href="mailto:">EMAIL ME</a>
       </div>
     </div>
   </body>
