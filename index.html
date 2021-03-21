@@ -23,20 +23,19 @@
           );
           let years = Math.floor(diffInDays / 365);
 
-          let span = document.getElementById("age");
-          span.innerText = years;
+          document.getElementById("age").innerText = years;
         }
 
-        function makeEmailMeBtn() {
-          const email = document.getElementById("email-text").innerText;
-          let contactMeBtn = document.getElementsByClassName("email-me");
+        function addEmail() {
+          const email = document.getElementById("email-text").innerHTML;
+          document.getElementsByClassName("email-me")[0].innerHTML = "mailto:" + email;
           contactMeBtn.href = "mailto:" + email;
         }
 
         document.addEventListener('DOMContentLoaded', (event) => {
           console.log('DOM fully loaded and parsed');
           addAge();
-          makeEmailMeBtn();
+          addEmail();
       });
     </script>
   </head>
