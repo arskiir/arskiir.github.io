@@ -7,15 +7,16 @@ function addAge() {
   let years = Math.floor(diffInDays / 365);
 
   document.getElementById("age").innerText = years;
+  console.log('added age');
 }
 
 function addEmail() {
   const email = document.getElementById("email-text").innerText;
   document.getElementById("email-me-btn").href = "mailto:" + email;
+  console.log('added email');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
   addAge();
   addEmail();
 });
