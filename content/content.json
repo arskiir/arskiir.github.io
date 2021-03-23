@@ -1,16 +1,16 @@
 {
-  "avatar": "https://scontent.fphs4-1.fna.fbcdn.net/v/t1.0-9/87530754_3492810627459571_6441110076685025280_o.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFILL8zRB0JRo1Tk8oKo_lrfnUlANlOWdB-dSUA2U5Z0GezNG5QWPdBVOXUs-AnFHyhoeqkAJ5VaBqRlrk5V1L4&_nc_ohc=ogJHtV5LmgwAX9mQbdI&_nc_ht=scontent.fphs4-1.fna&oh=f05e072a81564f96dc9b0e122a171cbb&oe=607C72AE",
-  "name": "SUKRIT BANTHAO",
-  "job": "COMPUTER ENGINEERING STUDENT",
-  "about": "I am 20 years old, and currently a computer engineering student at Chulalongkorn University, Thailand. I love coding, playing games, badminton, and cats. My dream is to travel around the world.",
-  "email": "arm.xdsk@hotmail.com",
-  "facebook": {
-    "name": "Arm Sukrit",
-    "link": "https://www.facebook.com/arm.xdsk"
-  },
-  "location": {
-    "name": "Sukhothai, Thailand",
-    "link": "https://goo.gl/maps/e9X5vggWxjgfPHa59"
-  },
-  "background": "https://images.unsplash.com/photo-1603468620905-8de7d86b781e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
+    "avatar": "https://scontent.fphs4-1.fna.fbcdn.net/v/t1.0-9/87530754_3492810627459571_6441110076685025280_o.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFILL8zRB0JRo1Tk8oKo_lrfnUlANlOWdB-dSUA2U5Z0GezNG5QWPdBVOXUs-AnFHyhoeqkAJ5VaBqRlrk5V1L4&_nc_ohc=ogJHtV5LmgwAX9mQbdI&_nc_ht=scontent.fphs4-1.fna&oh=f05e072a81564f96dc9b0e122a171cbb&oe=607C72AE",
+    "name": "SUKRIT BANTHAO",
+    "job": "COMPUTER ENGINEERING STUDENT",
+    "about": "I am 20 years old, and currently a computer engineering student at Chulalongkorn University, Thailand. I love coding, playing games, badminton, and cats. My dream is to travel around the world.",
+    "email": "arm.xdsk@hotmail.com",
+    "facebook": {
+        "name": "Arm Sukrit",
+        "link": "https://www.facebook.com/arm.xdsk"
+    },
+    "location": {
+        "name": "Sukhothai, Thailand",
+        "link": "https://goo.gl/maps/e9X5vggWxjgfPHa59"
+    },
+    "background": "https://images.unsplash.com/photo-1603468620905-8de7d86b781e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
 }
