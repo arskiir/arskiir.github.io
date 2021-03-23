@@ -1,76 +1,76 @@
 /* for desktop screens */
 body {
-  font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .about {
-  font-size: 18px;
-  font-weight: lighter;
-  color: rgb(63, 63, 63);
-  margin-bottom: 24px;
+    font-size: 18px;
+    font-weight: lighter;
+    color: rgb(63, 63, 63);
+    margin-bottom: 24px;
 }
 
 .avatar {
-  border-radius: 50%;
-  height: 210px;
-  margin-bottom: 40px;
-  object-fit: cover;
-  width: 210px;
-  box-shadow: 10px 5px 5px black;
+    border-radius: 50%;
+    height: 210px;
+    margin-bottom: 40px;
+    object-fit: cover;
+    width: 210px;
+    box-shadow: 10px 5px 5px black;
 }
 
 .bg-container {
-  background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0.7)
-    ),
-    url("https://images.unsplash.com/photo-1603468620905-8de7d86b781e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom right;
-  min-height: 100vh;
-  padding: 128px;
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0.7)
+        ),
+        url("https://images.unsplash.com/photo-1603468620905-8de7d86b781e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    min-height: 100vh;
+    padding: 128px;
 }
 
 .contact {
-  margin-bottom: 48px;
+    margin-bottom: 48px;
 }
 
 .contact-icon {
-  margin-right: 12px;
-  width: 10px;
+    margin-right: 12px;
+    width: 10px;
 }
 
 .contact-item {
-  margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 .btn {
-  border: 1px solid black;
-  background-color: black;
-  color: white;
-  padding: 10px 24px;
-  text-decoration: none;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
 }
 
 .job {
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
 }
 
 .link-no-dec {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .name {
-  font-size: 48px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+    font-size: 48px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
 .text-container {
-  max-width: 500px;
+    max-width: 500px;
 }
