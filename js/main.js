@@ -1,11 +1,18 @@
-function addEmailToButton() {
-    const email = document.getElementById("email-text").innerText;
+const fetchContent = async (url) => {
+    // fetch json
+    const response = await fetch(url);
+    console.log(response);
+    return response;
+};
+const content = fetchContent("../content/content.json");
+
+function addEmailToButton(email) {
+    // add email to the CONTACT ME button.href
     document.getElementById("email-me-btn").href = "mailto:" + email;
     console.log("added email");
 }
 
 const addContent = () => {
-    const content = fetchContent("../content/content.json");
     console.log(content);
     // add avatar
     document.querySelector(".avatar").src = content.avatar;
@@ -18,20 +25,13 @@ const addContent = () => {
     document.querySelector(".about").innerText = content.about;
     // add email
     document.querySelector("#email-text").innerText = content.email;
-    addEmailToButton();
+    addEmailToButton(content.email);
     // add facebook info
     document.querySelector("#facebook").innerText = content.facebook.name;
     document.querySelector("#facebook").href = content.facebook.link;
     // add location info
     document.querySelector("#location").innerText = content.location.name;
     document.querySelector("#location").href = content.location.link;
-};
-
-const fetchContent = async (url) => {
-    // fetch json
-    const response = await fetch(url);
-    console.log(response);
-    return response;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
