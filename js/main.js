@@ -4,7 +4,7 @@ const fetchContent = async (url) => {
     console.log(response);
     return response;
 };
-const content = fetchContent("../content/content.json");
+const CONTENT = fetchContent("../content/content.json");
 
 function addEmailToButton(email) {
     // add email to the CONTACT ME button.href
@@ -13,25 +13,25 @@ function addEmailToButton(email) {
 }
 
 const addContent = () => {
-    console.log(content);
+    console.log(CONTENT);
     // add avatar
-    document.querySelector(".avatar").src = content.avatar;
+    document.querySelector(".avatar").src = CONTENT.avatar;
     // add name
-    document.querySelector("#first-name").innerText = content.name.first;
-    document.querySelector("#last-name").innerText = content.name.last;
+    document.querySelector("#first-name").innerText = CONTENT.name.first;
+    document.querySelector("#last-name").innerText = CONTENT.name.last;
     // add job
-    document.querySelector(".job").innerText = content.job;
+    document.querySelector(".job").innerText = CONTENT.job;
     // add about
-    document.querySelector(".about").innerText = content.about;
+    document.querySelector(".about").innerText = CONTENT.about;
     // add email
-    document.querySelector("#email-text").innerText = content.email;
-    addEmailToButton(content.email);
+    document.querySelector("#email-text").innerText = CONTENT.email;
+    addEmailToButton(CONTENT.email);
     // add facebook info
-    document.querySelector("#facebook").innerText = content.facebook.name;
-    document.querySelector("#facebook").href = content.facebook.link;
+    document.querySelector("#facebook").innerText = CONTENT.facebook.name;
+    document.querySelector("#facebook").href = CONTENT.facebook.link;
     // add location info
-    document.querySelector("#location").innerText = content.location.name;
-    document.querySelector("#location").href = content.location.link;
+    document.querySelector("#location").innerText = CONTENT.location.name;
+    document.querySelector("#location").href = CONTENT.location.link;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
