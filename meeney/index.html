@@ -1,19 +1,508 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meeney</title>
-<style>
-  :root { color-scheme: dark light; }
-  body { margin: 0; min-height: 100vh; display: grid; place-content: center; padding: 0 16px;
-         font-family: system-ui, sans-serif; text-align: center; background: #1c1a17; color: #ece6da; }
-  h1 { font-size: 2.5rem; letter-spacing: -0.05em; margin: 0 0 .5rem; }
-  p { margin: 0; color: #b5ad9e; }
-</style>
-</head>
-<body>
-<h1>meeney</h1>
-<p>Track what comes in and what goes out, kept on your device.</p>
-</body>
-</html>
+<!DOCTYPE html><html lang="en" data-scheme="parchment" data-theme="dark" data-astro-cid-ybatimd6><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Meeney</title><meta name="description" content="Track what comes in and what goes out, kept on your device."><link rel="icon" href="data:image/svg+xml,%3c!--%20Generated%20by%20prototypes/scripts/app-icon.mjs%20from%20schemes.json%20(Parchment)%20and%20app-icon.json.%20Do%20not%20edit%20by%20hand.%20--%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3e%3crect%20width='100'%20height='100'%20rx='22.4'%20fill='%23243a2c'/%3e%3crect%20x='24'%20y='35'%20width='20'%20height='11'%20rx='4'%20fill='%23f6be72'/%3e%3crect%20x='46'%20y='35'%20width='16'%20height='11'%20rx='4'%20fill='%23f6be72'%20opacity='0.7'/%3e%3crect%20x='64'%20y='35'%20width='12'%20height='11'%20rx='4'%20fill='%23f6be72'%20opacity='0.45'/%3e%3crect%20x='24'%20y='54'%20width='26'%20height='11'%20rx='4'%20fill='%23cfe8bf'/%3e%3crect%20x='52'%20y='54'%20width='9'%20height='11'%20rx='4'%20fill='%23cfe8bf'%20opacity='0.6'/%3e%3c/svg%3e" type="image/svg+xml"><meta property="og:type" content="website"><meta property="og:site_name" content="Meeney"><meta property="og:title" content="Meeney"><meta property="og:description" content="Track what comes in and what goes out, kept on your device."><meta property="og:url" content="https://arskiir.github.io/meeney/"><meta property="og:image" content="https://arskiir.github.io/meeney/_astro/meeney-preview.LmObL3iy.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The Meeney logo, and the line: Track what comes in and what goes out, kept on your device."><meta name="twitter:card" content="summary_large_image"><style>[data-scheme="parchment"] {
+  --page-light: #f4f0e4;
+  --page-dark: #1f1c17;
+  --inset-light: #e4d9c1;
+  --inset-dark: #161410;
+  --card-light: #fdfbf6;
+  --card-dark: #2a261f;
+  --ink-light: #1f231c;
+  --ink-dark: #f0e8d4;
+  --ink-muted-light: #6f6656;
+  --ink-muted-dark: #a39e90;
+  --line-light: #dbd1ba;
+  --line-dark: #3d3930;
+  --primary-light: #c27a11;
+  --primary-dark: #e0b04a;
+  --primary-container-light: #ffd18a;
+  --primary-container-dark: #57432b;
+  --on-primary-container-light: #4a3100;
+  --on-primary-container-dark: #fcddbd;
+  --income-light: #2f7250;
+  --income-dark: #6fbf8f;
+  --expense-light: #c2420c;
+  --expense-dark: #e56a38;
+  --tile-light: #ece4d0;
+  --tile-dark: #2a261f;
+  --heat-light: #e2762c;
+  --heat-dark: #784229;
+  --balance-light: #243a2c;
+  --balance-dark: #e0b04a;
+  --on-balance-light: #fff8ec;
+  --on-balance-dark: #1f1c17;
+  --on-balance-muted-light: #c4d6bb;
+  --on-balance-muted-dark: #4f3b18;
+  --balance-income-light: #cfe8bf;
+  --balance-income-dark: #225038;
+  --balance-expense-light: #f6be72;
+  --balance-expense-dark: #70260e;
+}
+
+[data-scheme="banknote"] {
+  --page-light: #edeee4;
+  --page-dark: #1a151d;
+  --inset-light: #dde0d0;
+  --inset-dark: #120e15;
+  --card-light: #f7f8f1;
+  --card-dark: #26202b;
+  --ink-light: #35293b;
+  --ink-dark: #ece5d9;
+  --ink-muted-light: #6d6475;
+  --ink-muted-dark: #9c93a2;
+  --line-light: #d1d4c4;
+  --line-dark: #3a3140;
+  --primary-light: #23766f;
+  --primary-dark: #63c7ba;
+  --primary-container-light: #cfe5e0;
+  --primary-container-dark: #27514c;
+  --on-primary-container-light: #174a45;
+  --on-primary-container-dark: #c6ede7;
+  --income-light: #226b57;
+  --income-dark: #7fd4ae;
+  --expense-light: #c22f1c;
+  --expense-dark: #ff7d5e;
+  --tile-light: #e1e4d5;
+  --tile-dark: #26202b;
+  --heat-light: #cc7f90;
+  --heat-dark: #7e3a49;
+  --balance-light: #35293b;
+  --balance-dark: #e7e5d6;
+  --on-balance-light: #f2ecdf;
+  --on-balance-dark: #35293b;
+  --on-balance-muted-light: #b3a8ba;
+  --on-balance-muted-dark: #6c6272;
+  --balance-income-light: #9fdcc3;
+  --balance-income-dark: #1c6a54;
+  --balance-expense-light: #f6a68f;
+  --balance-expense-dark: #b82c19;
+}
+
+[data-scheme="aurora"] {
+  --page-light: #eef2fb;
+  --page-dark: #0b1020;
+  --inset-light: #dee5f4;
+  --inset-dark: #070b17;
+  --card-light: #ffffff;
+  --card-dark: #161d35;
+  --ink-light: #141a33;
+  --ink-dark: #e7ecff;
+  --ink-muted-light: #606985;
+  --ink-muted-dark: #8d97ba;
+  --line-light: #d1daee;
+  --line-dark: #26304f;
+  --primary-light: #167a68;
+  --primary-dark: #7ef0c8;
+  --primary-container-light: #cdeee5;
+  --primary-container-dark: #1c4a46;
+  --on-primary-container-light: #0b4a3f;
+  --on-primary-container-dark: #a9ffe4;
+  --income-light: #167552;
+  --income-dark: #72e5b3;
+  --expense-light: #bd3459;
+  --expense-dark: #ff809b;
+  --tile-light: #e3e9f6;
+  --tile-dark: #161d35;
+  --heat-light: #9580f0;
+  --heat-dark: #6a4fd6;
+  --balance-light: #1a2140;
+  --balance-dark: #161d35;
+  --on-balance-light: #eef2ff;
+  --on-balance-dark: #eef2ff;
+  --on-balance-muted-light: #9ba7cf;
+  --on-balance-muted-dark: #9ba7cf;
+  --balance-income-light: #92f1c8;
+  --balance-income-dark: #92f1c8;
+  --balance-expense-light: #ffa3b7;
+  --balance-expense-dark: #ffa3b7;
+}
+
+[data-scheme="ledger"] {
+  --page-light: #e9eee2;
+  --page-dark: #11201a;
+  --inset-light: #d8dfcd;
+  --inset-dark: #0b1610;
+  --card-light: #f5f8ef;
+  --card-dark: #1b2c25;
+  --ink-light: #1e2924;
+  --ink-dark: #ebe8d6;
+  --ink-muted-light: #5c6a61;
+  --ink-muted-dark: #90a094;
+  --line-light: #c8d2be;
+  --line-dark: #2a3c33;
+  --primary-light: #7f6118;
+  --primary-dark: #dcb45c;
+  --primary-container-light: #efe1b3;
+  --primary-container-dark: #4d3d12;
+  --on-primary-container-light: #574310;
+  --on-primary-container-dark: #f6e2ad;
+  --income-light: #1f5f96;
+  --income-dark: #7fb9ee;
+  --expense-light: #b5312a;
+  --expense-dark: #f27b64;
+  --tile-light: #dce4d1;
+  --tile-dark: #1b2c25;
+  --heat-light: #e0715a;
+  --heat-dark: #7c3a2e;
+  --balance-light: #1f3d31;
+  --balance-dark: #dcb45c;
+  --on-balance-light: #f1eddc;
+  --on-balance-dark: #1c2a22;
+  --on-balance-muted-light: #a6bdae;
+  --on-balance-muted-dark: #5d4a18;
+  --balance-income-light: #a8d4f5;
+  --balance-income-dark: #17436b;
+  --balance-expense-light: #f2a48a;
+  --balance-expense-dark: #7a2118;
+}
+
+[data-scheme="coin"] {
+  --page-light: #f0eeeb;
+  --page-dark: #16171a;
+  --inset-light: #e1ded9;
+  --inset-dark: #0f1012;
+  --card-light: #fbfaf8;
+  --card-dark: #212329;
+  --ink-light: #25221f;
+  --ink-dark: #ebe8e2;
+  --ink-muted-light: #6a645d;
+  --ink-muted-dark: #99968f;
+  --line-light: #d7d2cb;
+  --line-dark: #33353b;
+  --primary-light: #3d6b93;
+  --primary-dark: #84b4dc;
+  --primary-container-light: #d3e2ee;
+  --primary-container-dark: #29435a;
+  --on-primary-container-light: #1c3b55;
+  --on-primary-container-dark: #cfe4f6;
+  --income-light: #24735a;
+  --income-dark: #72cfa9;
+  --expense-light: #b04f22;
+  --expense-dark: #ea8a5d;
+  --tile-light: #e5e0d9;
+  --tile-dark: #212329;
+  --heat-light: #cf7748;
+  --heat-dark: #9a4b26;
+  --balance-light: #2c2e33;
+  --balance-dark: #8a4520;
+  --on-balance-light: #f3f1ed;
+  --on-balance-dark: #fff6ee;
+  --on-balance-muted-light: #a6a8ad;
+  --on-balance-muted-dark: #e0b294;
+  --balance-income-light: #8fdcbe;
+  --balance-income-dark: #9fe3bf;
+  --balance-expense-light: #f3a978;
+  --balance-expense-dark: #ffc4a0;
+}
+
+[data-scheme="dusk"] {
+  --page-light: #f3f0f7;
+  --page-dark: #14132a;
+  --inset-light: #e4dfec;
+  --inset-dark: #0d0c1d;
+  --card-light: #fcfaff;
+  --card-dark: #1f1d3a;
+  --ink-light: #1f1b30;
+  --ink-dark: #f3ebda;
+  --ink-muted-light: #6f6a86;
+  --ink-muted-dark: #9b94b8;
+  --line-light: #d8d2e3;
+  --line-dark: #2f2c4e;
+  --primary-light: #a45c0a;
+  --primary-dark: #f3a942;
+  --primary-container-light: #ffe2b6;
+  --primary-container-dark: #5b3b0e;
+  --on-primary-container-light: #5a3a04;
+  --on-primary-container-dark: #ffe0a6;
+  --income-light: #257559;
+  --income-dark: #71d3aa;
+  --expense-light: #bf3a28;
+  --expense-dark: #ff8c6b;
+  --tile-light: #e8e3f0;
+  --tile-dark: #1f1d3a;
+  --heat-light: #d9662e;
+  --heat-dark: #a4521e;
+  --balance-light: #221d45;
+  --balance-dark: #e9a03a;
+  --on-balance-light: #fff3e3;
+  --on-balance-dark: #2b1a05;
+  --on-balance-muted-light: #b6add0;
+  --on-balance-muted-dark: #6b4711;
+  --balance-income-light: #9fe6c7;
+  --balance-income-dark: #093a2a;
+  --balance-expense-light: #ffb38b;
+  --balance-expense-dark: #7b1f10;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --page: var(--page-light);
+  --inset: var(--inset-light);
+  --card: var(--card-light);
+  --ink: var(--ink-light);
+  --ink-muted: var(--ink-muted-light);
+  --line: var(--line-light);
+  --primary: var(--primary-light);
+  --primary-container: var(--primary-container-light);
+  --on-primary-container: var(--on-primary-container-light);
+  --income: var(--income-light);
+  --expense: var(--expense-light);
+  --tile: var(--tile-light);
+  --heat: var(--heat-light);
+  --balance: var(--balance-light);
+  --on-balance: var(--on-balance-light);
+  --on-balance-muted: var(--on-balance-muted-light);
+  --balance-income: var(--balance-income-light);
+  --balance-expense: var(--balance-expense-light);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --page: var(--page-dark);
+  --inset: var(--inset-dark);
+  --card: var(--card-dark);
+  --ink: var(--ink-dark);
+  --ink-muted: var(--ink-muted-dark);
+  --line: var(--line-dark);
+  --primary: var(--primary-dark);
+  --primary-container: var(--primary-container-dark);
+  --on-primary-container: var(--on-primary-container-dark);
+  --income: var(--income-dark);
+  --expense: var(--expense-dark);
+  --tile: var(--tile-dark);
+  --heat: var(--heat-dark);
+  --balance: var(--balance-dark);
+  --on-balance: var(--on-balance-dark);
+  --on-balance-muted: var(--on-balance-muted-dark);
+  --balance-income: var(--balance-income-dark);
+  --balance-expense: var(--balance-expense-dark);
+}
+
+[data-scheme="parchment"][data-theme="light"] [data-screenshot]:not([data-set="parchment"][data-look="light"]) { display: none; }
+
+[data-scheme="parchment"][data-theme="dark"] [data-screenshot]:not([data-set="parchment"][data-look="dark"]) { display: none; }
+
+[data-scheme="banknote"][data-theme="light"] [data-screenshot]:not([data-set="banknote"][data-look="light"]) { display: none; }
+
+[data-scheme="banknote"][data-theme="dark"] [data-screenshot]:not([data-set="banknote"][data-look="dark"]) { display: none; }
+
+[data-scheme="aurora"][data-theme="light"] [data-screenshot]:not([data-set="aurora"][data-look="light"]) { display: none; }
+
+[data-scheme="aurora"][data-theme="dark"] [data-screenshot]:not([data-set="aurora"][data-look="dark"]) { display: none; }
+
+[data-scheme="ledger"][data-theme="light"] [data-screenshot]:not([data-set="ledger"][data-look="light"]) { display: none; }
+
+[data-scheme="ledger"][data-theme="dark"] [data-screenshot]:not([data-set="ledger"][data-look="dark"]) { display: none; }
+
+[data-scheme="coin"][data-theme="light"] [data-screenshot]:not([data-set="coin"][data-look="light"]) { display: none; }
+
+[data-scheme="coin"][data-theme="dark"] [data-screenshot]:not([data-set="coin"][data-look="dark"]) { display: none; }
+
+[data-scheme="dusk"][data-theme="light"] [data-screenshot]:not([data-set="dusk"][data-look="light"]) { display: none; }
+
+[data-scheme="dusk"][data-theme="dark"] [data-screenshot]:not([data-set="dusk"][data-look="dark"]) { display: none; }</style><style>/* ─── What each colour set adds beyond its colours ───────────────────────────────────────────────
+   Presentation, not colour data: the Flutter app draws its own. A set with a gradient page keeps the
+   page flat where the Islands sit, so the Island fade lands on the same colour. Animated colours
+   are registered properties animated on the root, so every surface reading them stays in step. */
+
+/* Parchment: the shell nav's Island takes a hairline of ink by day, so the tan band has an edge on the page. */
+[data-scheme="parchment"]:not([data-theme="dark"]) {
+  --island-ring: color-mix(in srgb, var(--ink) 9%, transparent);
+}
+
+/* Banknote: guilloché on the balance card, two ring systems from either end making a moiré. */
+[data-scheme="banknote"] {
+  --balance-image:
+    repeating-radial-gradient(circle at 108% 50%, transparent 0 5px, rgba(255, 255, 255, 0.055) 5px 6px),
+    repeating-radial-gradient(circle at -8% 50%, transparent 0 5px, rgba(255, 255, 255, 0.055) 5px 6px);
+  --balance-ring: rgba(255, 255, 255, 0.08);
+}
+[data-scheme="banknote"][data-theme="dark"] {
+  /* The note itself: dark rings on cotton, and a fine security thread of teal. */
+  --balance-image:
+    linear-gradient(to right, transparent calc(72% - 1px), rgba(35, 118, 111, 0.35) calc(72% - 1px), rgba(35, 118, 111, 0.35) calc(72% + 1px), transparent calc(72% + 1px)),
+    repeating-radial-gradient(circle at 108% 50%, transparent 0 5px, rgba(53, 41, 59, 0.07) 5px 6px),
+    repeating-radial-gradient(circle at -8% 50%, transparent 0 5px, rgba(53, 41, 59, 0.07) 5px 6px);
+  --balance-ring: rgba(53, 41, 59, 0.12);
+}
+
+/* Aurora: three sky colours drift; the page reads them at the top and is flat paper below. */
+@property --sky-a {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --sky-b {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --sky-c {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@keyframes aurora-day {
+  0% {
+    --sky-a: #ffd6c4;
+    --sky-b: #cfe0ff;
+    --sky-c: #f3d2ea;
+  }
+  50% {
+    --sky-a: #ffe1c0;
+    --sky-b: #d8d2ff;
+    --sky-c: #ffd4dc;
+  }
+  100% {
+    --sky-a: #fbd0d0;
+    --sky-b: #c8e6ff;
+    --sky-c: #ead4f5;
+  }
+}
+@keyframes aurora-night {
+  0% {
+    --sky-a: #157a6e;
+    --sky-b: #3a2d8c;
+    --sky-c: #6a2a5e;
+  }
+  50% {
+    --sky-a: #1f9a78;
+    --sky-b: #2a4aa6;
+    --sky-c: #7b2f6e;
+  }
+  100% {
+    --sky-a: #17607f;
+    --sky-b: #4b2a8a;
+    --sky-c: #5b2f78;
+  }
+}
+[data-scheme="aurora"] {
+  --sky-a: #ffd6c4;
+  --sky-b: #cfe0ff;
+  --sky-c: #f3d2ea;
+  animation: aurora-day 26s ease-in-out infinite alternate;
+  --page-image:
+    radial-gradient(90% 46% at 12% -6%, var(--sky-a), transparent 72%),
+    radial-gradient(75% 40% at 88% 2%, var(--sky-b), transparent 72%),
+    radial-gradient(60% 34% at 55% 22%, var(--sky-c), transparent 72%);
+  --island-ring: color-mix(in srgb, var(--ink) 10%, transparent);
+  --balance-image: linear-gradient(135deg, color-mix(in srgb, var(--sky-b) 34%, transparent), transparent 55%, color-mix(in srgb, var(--sky-a) 22%, transparent));
+  --balance-ring: rgba(255, 255, 255, 0.12);
+}
+[data-scheme="aurora"][data-theme="dark"] {
+  --sky-a: #157a6e;
+  --sky-b: #3a2d8c;
+  --sky-c: #6a2a5e;
+  animation-name: aurora-night;
+  --page-image:
+    radial-gradient(90% 48% at 12% -8%, var(--sky-a), transparent 72%),
+    radial-gradient(78% 42% at 90% 0%, var(--sky-b), transparent 72%),
+    radial-gradient(62% 34% at 55% 24%, var(--sky-c), transparent 72%);
+  --island-ring: rgba(255, 255, 255, 0.09);
+  --balance-image: linear-gradient(135deg, color-mix(in srgb, var(--sky-a) 45%, transparent), transparent 55%, color-mix(in srgb, var(--sky-c) 40%, transparent));
+  --balance-ring: rgba(255, 255, 255, 0.1);
+}
+
+/* Ledger: by day, plain green paper with the month's figures on bottle-green cloth; by night the book
+   is closed, so the page is the cloth cover itself, a faint weave, and the figures are gold foil. */
+[data-scheme="ledger"] {
+  --balance-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 6px);
+}
+[data-scheme="ledger"][data-theme="dark"] {
+  --page-image:
+    repeating-linear-gradient(45deg, rgba(235, 232, 214, 0.028) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(-45deg, rgba(235, 232, 214, 0.028) 0 1px, transparent 1px 5px);
+  --balance-image: linear-gradient(135deg, #efcf82 0%, #d8ad4e 28%, #b98a2b 54%, #e2bc63 80%, #f3d892 100%);
+  --balance-ring: rgba(255, 240, 200, 0.35);
+}
+
+/* Coin: a sheen turns across the balance card, pewter by day and copper by night. */
+@property --sheen {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@keyframes sheen-turn {
+  to {
+    --sheen: 360deg;
+  }
+}
+[data-scheme="coin"] {
+  --sheen: 20deg;
+  animation: sheen-turn 16s linear infinite;
+  --balance-image:
+    conic-gradient(from var(--sheen) at 28% 130%, transparent 0deg, rgba(255, 255, 255, 0.11) 28deg, transparent 56deg, transparent 200deg, rgba(255, 255, 255, 0.06) 226deg, transparent 252deg),
+    linear-gradient(160deg, #3b3e45 0%, #24262b 45%, #33363d 100%);
+  --balance-ring: rgba(255, 255, 255, 0.1);
+}
+[data-scheme="coin"][data-theme="dark"] {
+  --balance-image:
+    conic-gradient(from var(--sheen) at 28% 130%, transparent 0deg, rgba(255, 240, 220, 0.2) 28deg, transparent 56deg, transparent 200deg, rgba(255, 240, 220, 0.1) 226deg, transparent 252deg),
+    linear-gradient(150deg, #a85a2e 0%, #8a4520 42%, #6b3314 72%, #a25a2c 100%);
+  --balance-ring: rgba(255, 220, 190, 0.28);
+}
+
+/* Dusk: a glow at the top of the page breathes between saffron and rose; the balance card is the sky it sits in. */
+@property --glow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@keyframes dusk-day {
+  0%,
+  100% {
+    --glow: #f7c98a;
+  }
+  50% {
+    --glow: #f0a9b8;
+  }
+}
+@keyframes dusk-night {
+  0%,
+  100% {
+    --glow: #f2a740;
+  }
+  50% {
+    --glow: #e5667a;
+  }
+}
+[data-scheme="dusk"] {
+  --glow: #f7c98a;
+  animation: dusk-day 18s ease-in-out infinite;
+  --page-image:
+    radial-gradient(80% 42% at 18% -8%, color-mix(in srgb, var(--glow) 60%, transparent), transparent 70%),
+    radial-gradient(60% 34% at 92% -2%, rgba(203, 190, 240, 0.7), transparent 70%);
+  --balance-image:
+    radial-gradient(70% 90% at 100% 0%, color-mix(in srgb, var(--glow) 42%, transparent), transparent 70%),
+    linear-gradient(150deg, #221d45 0%, #2b2058 55%, #3c2354 100%);
+  --balance-ring: rgba(255, 243, 227, 0.1);
+}
+[data-scheme="dusk"][data-theme="dark"] {
+  --glow: #f2a740;
+  animation-name: dusk-night;
+  --page-image:
+    radial-gradient(85% 42% at 14% -10%, color-mix(in srgb, var(--glow) 30%, transparent), transparent 70%),
+    radial-gradient(60% 32% at 92% -4%, rgba(90, 60, 140, 0.5), transparent 70%);
+  --balance-image:
+    radial-gradient(70% 90% at 100% 0%, color-mix(in srgb, var(--glow) 55%, transparent), transparent 70%),
+    linear-gradient(150deg, #f6b64e 0%, #e28a1c 55%, #f4c469 100%);
+  --balance-ring: rgba(255, 235, 200, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scheme] {
+    animation: none;
+  }
+}
+</style><script>(function(){const lookStorageKey = "meeney.site.look";
+const looks = ["light","dark"];
+
+      const root = document.documentElement;
+      root.dataset.js = "";
+      try {
+        const look = localStorage.getItem(lookStorageKey);
+        if (looks.includes(look)) root.dataset.theme = look;
+      } catch {
+        // Storage may be unavailable; the served look stands.
+      }
+    })();</script><link rel="stylesheet" href="/meeney/_astro/Page.CUiDAIaM.css"><link rel="stylesheet" href="/meeney/_astro/index.BotTQCH4.css"></head><body data-astro-cid-ybatimd6><div class="sky" aria-hidden="true" data-astro-cid-ybatimd6></div><header class="bar" data-astro-cid-ybatimd6><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).load=e,window.dispatchEvent(new Event(`astro:load`))})();</script><script>(function(){function e(t){"@babel/helpers - typeof";return e=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},e(t)}function t(t,n){if(e(t)!=`object`||!t)return t;var r=t[Symbol.toPrimitive];if(r!==void 0){var i=r.call(t,n||`default`);if(e(i)!=`object`)return i;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(n===`string`?String:Number)(t)}function n(n){var r=t(n,`string`);return e(r)==`symbol`?r:r+``}function r(e,t,r){return(t=n(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}let i=/* @__PURE__ */ new Set([`__proto__`,`constructor`,`prototype`]);{let e={0:e=>a(e),1:e=>n(e),2:e=>new RegExp(e),3:e=>new Date(e),4:e=>new Map(n(e)),5:e=>new Set(n(e)),6:e=>BigInt(e),7:e=>new URL(e),8:e=>new Uint8Array(e),9:e=>new Uint16Array(e),10:e=>new Uint32Array(e),11:e=>1/0*e},t=t=>{let[n,r]=t;return n in e?e[n](r):void 0},n=e=>e.map(t),a=e=>typeof e!=`object`||!e?e:Object.fromEntries(Object.entries(e).map(([e,n])=>[e,t(n)]));class o extends HTMLElement{constructor(...e){super(...e),r(this,`Component`,void 0),r(this,`hydrator`,void 0),r(this,`hydrate`,async()=>{var e;if(!this.hydrator||!this.isConnected)return;let t=(e=this.parentElement)==null?void 0:e.closest(`astro-island[ssr]`);if(t){t.addEventListener(`astro:hydrate`,this.hydrate,{once:!0});return}let n=this.querySelectorAll(`astro-slot`),r={},i=this.querySelectorAll(`template[data-astro-template]`);for(let e of i){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`data-astro-template`)||`default`]=e.innerHTML,e.remove())}for(let e of n){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`name`)||`default`]=e.innerHTML)}let o;try{o=this.hasAttribute(`props`)?a(JSON.parse(this.getAttribute(`props`))):{}}catch(e){let t=this.getAttribute(`component-url`)||`<unknown>`,n=this.getAttribute(`component-export`);throw n&&(t+=` (export ${n})`),console.error(`[hydrate] Error parsing props for component ${t}`,this.getAttribute(`props`),e),e}await this.hydrator(this)(this.Component,o,r,{client:this.getAttribute(`client`)}),this.removeAttribute(`ssr`),this.dispatchEvent(new CustomEvent(`astro:hydrate`))}),r(this,`unmount`,()=>{this.isConnected||this.dispatchEvent(new CustomEvent(`astro:unmount`))})}disconnectedCallback(){document.removeEventListener(`astro:after-swap`,this.unmount),document.addEventListener(`astro:after-swap`,this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute(`await-children`)||document.readyState===`interactive`||document.readyState===`complete`)this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener(`DOMContentLoaded`,e),t.disconnect(),this.childrenConnectedCallback()},t=new MutationObserver(()=>{var t;((t=this.lastChild)==null?void 0:t.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue===`astro:end`&&(this.lastChild.remove(),e())});t.observe(this,{childList:!0}),document.addEventListener(`DOMContentLoaded`,e)}}async childrenConnectedCallback(){let e=this.getAttribute(`before-hydration-url`);e&&await import(e),this.start()}getRetryImportUrl(e){let t=new URL(e,document.baseURI);return t.searchParams.set(`astro-retry`,Date.now().toString()),t.toString()}async importWithRetry(e){try{return await import(e)}catch(t){return await new Promise(e=>setTimeout(e,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let t=this.getAttribute(`component-url`),n=new CustomEvent(`astro:hydration-error`,{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:t}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${t}`,e)}async start(){let e=JSON.parse(this.getAttribute(`opts`)),t=this.getAttribute(`client`);if(Astro[t]===void 0){window.addEventListener(`astro:${t}`,()=>this.start(),{once:!0});return}try{await Astro[t](async()=>{let e=this.getAttribute(`renderer-url`);try{let[t,{default:n}]=await Promise.all([this.importWithRetry(this.getAttribute(`component-url`)),e?this.importWithRetry(e):Promise.resolve({default:()=>()=>{}})]),r=this.getAttribute(`component-export`)||`default`;if(r.includes(`.`)){this.Component=t;for(let e of r.split(`.`)){if(i.has(e)||!this.Component||typeof this.Component!=`object`&&typeof this.Component!=`function`||!Object.hasOwn(this.Component,e))throw Error(`Invalid component export path: ${r}`);this.Component=this.Component[e]}}else{if(i.has(r))throw Error(`Invalid component export path: ${r}`);this.Component=t[r]}return this.hydrator=n,this.hydrate}catch(e){return this.handleHydrationError(e),()=>{}}},e,this)}catch(e){this.handleHydrationError(e)}}attributeChangedCallback(){this.hydrate()}}r(o,`observedAttributes`,[`props`]),customElements.get(`astro-island`)||customElements.define(`astro-island`,o)}})();</script><astro-island uid="Z2sXfkb" prefix="r3" component-url="/meeney/_astro/LookToggle.m3K6Xav_.js" component-export="LookToggle" renderer-url="/meeney/_astro/client.EoSUrE1U.js" props="{&quot;data-astro-cid-ybatimd6&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;LookToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" role="switch" aria-checked="true" aria-label="Dark mode" class="look-toggle"><svg viewBox="0 0 24 24" aria-hidden="true" class="look-toggle-icon look-toggle-moon"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true" class="look-toggle-icon look-toggle-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg></button><!--astro:end--></astro-island></header><main data-astro-cid-ybatimd6><div class="landing" data-astro-cid-w6ie7loq><section class="hero" aria-label="Meeney" data-astro-cid-w6ie7loq><h1 data-astro-cid-w6ie7loq><span class="logo" style="--name-size: 40px" data-astro-cid-f7espo7c><span class="mark" aria-hidden="true" data-astro-cid-f7espo7c><img class="mark-light" src="data:image/svg+xml,%3c!--%20Generated%20by%20prototypes/scripts/app-icon.mjs%20from%20schemes.json%20(Parchment)%20and%20app-icon.json.%20Do%20not%20edit%20by%20hand.%20--%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3e%3crect%20width='100'%20height='100'%20rx='22.4'%20fill='%23243a2c'/%3e%3crect%20x='24'%20y='35'%20width='20'%20height='11'%20rx='4'%20fill='%23f6be72'/%3e%3crect%20x='46'%20y='35'%20width='16'%20height='11'%20rx='4'%20fill='%23f6be72'%20opacity='0.7'/%3e%3crect%20x='64'%20y='35'%20width='12'%20height='11'%20rx='4'%20fill='%23f6be72'%20opacity='0.45'/%3e%3crect%20x='24'%20y='54'%20width='26'%20height='11'%20rx='4'%20fill='%23cfe8bf'/%3e%3crect%20x='52'%20y='54'%20width='9'%20height='11'%20rx='4'%20fill='%23cfe8bf'%20opacity='0.6'/%3e%3c/svg%3e" alt="" data-astro-cid-f7espo7c><img class="mark-dark" src="data:image/svg+xml,%3c!--%20Generated%20by%20prototypes/scripts/app-icon.mjs%20from%20schemes.json%20(Parchment)%20and%20app-icon.json.%20Do%20not%20edit%20by%20hand.%20--%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3e%3crect%20width='100'%20height='100'%20rx='22.4'%20fill='%23161410'/%3e%3crect%20x='24'%20y='35'%20width='20'%20height='11'%20rx='4'%20fill='%23e56a38'/%3e%3crect%20x='46'%20y='35'%20width='16'%20height='11'%20rx='4'%20fill='%23e56a38'%20opacity='0.7'/%3e%3crect%20x='64'%20y='35'%20width='12'%20height='11'%20rx='4'%20fill='%23e56a38'%20opacity='0.45'/%3e%3crect%20x='24'%20y='54'%20width='26'%20height='11'%20rx='4'%20fill='%236fbf8f'/%3e%3crect%20x='52'%20y='54'%20width='9'%20height='11'%20rx='4'%20fill='%236fbf8f'%20opacity='0.6'/%3e%3c/svg%3e" alt="" data-astro-cid-f7espo7c></span><span class="name" data-astro-cid-f7espo7c>meeney</span></span></h1><p class="line" data-astro-cid-w6ie7loq>Track what comes in and what goes out, kept on your device.</p><div class="stage" data-astro-cid-w6ie7loq><div class="phone" data-screen="home" style="--screen-width: 440; --screen-height: 956" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/home-parchment-light.CCuTd7zu.webp" alt="Home in Parchment, light" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/home-parchment-dark.zF2iKv_J.webp" alt="Home in Parchment, dark" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/home-banknote-light.CxlZDKWY.webp" alt="Home in Banknote, light" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/home-banknote-dark.DA_cJyiK.webp" alt="Home in Banknote, dark" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/home-aurora-light.BiuGGewm.webp" alt="Home in Aurora, light" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/home-aurora-dark.CEhvkz2A.webp" alt="Home in Aurora, dark" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/home-ledger-light.Bxl-kH2g.webp" alt="Home in Ledger, light" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/home-ledger-dark.DN12mxQ5.webp" alt="Home in Ledger, dark" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/home-coin-light.BXRW-fYS.webp" alt="Home in Coin, light" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/home-coin-dark.BshH7bTZ.webp" alt="Home in Coin, dark" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/home-dusk-light.BYXN-as5.webp" alt="Home in Dusk, light" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/home-dusk-dark.Bwxm8XgO.webp" alt="Home in Dusk, dark" width="440" height="956" loading="eager" decoding="async" data-astro-cid-ykln7coe></div></div></div></section><section id="does" class="section" data-enter aria-labelledby="does-title" data-astro-cid-w6ymvdtg><h2 id="does-title" data-astro-cid-w6ymvdtg>What it does</h2><ul class="strip" data-astro-cid-w6ie7loq><li data-astro-cid-w6ie7loq><figure data-astro-cid-w6ie7loq><figcaption data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Home</h3><p data-astro-cid-w6ie7loq>The month at a glance: what came in, what went out, and every day on its calendar.</p></figcaption><div class="phone" data-screen="home" style="--screen-width: 440; --screen-height: 956" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/home-parchment-light.CCuTd7zu.webp" alt="Home in Parchment, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/home-parchment-dark.zF2iKv_J.webp" alt="Home in Parchment, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/home-banknote-light.CxlZDKWY.webp" alt="Home in Banknote, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/home-banknote-dark.DA_cJyiK.webp" alt="Home in Banknote, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/home-aurora-light.BiuGGewm.webp" alt="Home in Aurora, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/home-aurora-dark.CEhvkz2A.webp" alt="Home in Aurora, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/home-ledger-light.Bxl-kH2g.webp" alt="Home in Ledger, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/home-ledger-dark.DN12mxQ5.webp" alt="Home in Ledger, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/home-coin-light.BXRW-fYS.webp" alt="Home in Coin, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/home-coin-dark.BshH7bTZ.webp" alt="Home in Coin, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/home-dusk-light.BYXN-as5.webp" alt="Home in Dusk, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/home-dusk-dark.Bwxm8XgO.webp" alt="Home in Dusk, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe></div></div></figure></li><li data-astro-cid-w6ie7loq><figure data-astro-cid-w6ie7loq><figcaption data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Adding a transaction</h3><p data-astro-cid-w6ie7loq>A title, an amount on its own keypad, a category: a few taps and it&#39;s in the ledger.</p></figcaption><div class="phone" data-screen="transaction-form" style="--screen-width: 440; --screen-height: 956" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/transaction-form-parchment-light.CWjjH3Ew.webp" alt="Adding a transaction in Parchment, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/transaction-form-parchment-dark.DxWAmL1O.webp" alt="Adding a transaction in Parchment, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/transaction-form-banknote-light.D7SBw0wD.webp" alt="Adding a transaction in Banknote, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/transaction-form-banknote-dark.CUkoaPFP.webp" alt="Adding a transaction in Banknote, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/transaction-form-aurora-light.ClqEGfDe.webp" alt="Adding a transaction in Aurora, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/transaction-form-aurora-dark.CfuhwWj2.webp" alt="Adding a transaction in Aurora, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/transaction-form-ledger-light.Z0nJCCgy.webp" alt="Adding a transaction in Ledger, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/transaction-form-ledger-dark.C4ZmDBH2.webp" alt="Adding a transaction in Ledger, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/transaction-form-coin-light.CbdjvkZ2.webp" alt="Adding a transaction in Coin, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/transaction-form-coin-dark.B2D4LXoF.webp" alt="Adding a transaction in Coin, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/transaction-form-dusk-light.SIGXDj25.webp" alt="Adding a transaction in Dusk, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/transaction-form-dusk-dark.wjdG7Xmt.webp" alt="Adding a transaction in Dusk, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe></div></div></figure></li><li data-astro-cid-w6ie7loq><figure data-astro-cid-w6ie7loq><figcaption data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Breakdown</h3><p data-astro-cid-w6ie7loq>Where the month went, category by category, against the month before; by title and by payment method with Plus. <span class="plus-mark">Plus</span></p></figcaption><div class="phone" data-screen="analytics-breakdown" style="--screen-width: 440; --screen-height: 956" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/analytics-breakdown-parchment-light.mFP66nKd.webp" alt="Breakdown in Parchment, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/analytics-breakdown-parchment-dark.D1285G9b.webp" alt="Breakdown in Parchment, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/analytics-breakdown-banknote-light.v7GYNLYD.webp" alt="Breakdown in Banknote, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/analytics-breakdown-banknote-dark.BNaOk7_H.webp" alt="Breakdown in Banknote, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/analytics-breakdown-aurora-light.CMlEXeDw.webp" alt="Breakdown in Aurora, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/analytics-breakdown-aurora-dark.B-UUdkSH.webp" alt="Breakdown in Aurora, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/analytics-breakdown-ledger-light.Dsq-zRPo.webp" alt="Breakdown in Ledger, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/analytics-breakdown-ledger-dark.hI8qHck8.webp" alt="Breakdown in Ledger, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/analytics-breakdown-coin-light.lE5VC51k.webp" alt="Breakdown in Coin, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/analytics-breakdown-coin-dark.BgqxWPL2.webp" alt="Breakdown in Coin, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/analytics-breakdown-dusk-light.DwwYKZ0s.webp" alt="Breakdown in Dusk, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/analytics-breakdown-dusk-dark.BFJv_DjL.webp" alt="Breakdown in Dusk, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe></div></div></figure></li><li data-astro-cid-w6ie7loq><figure data-astro-cid-w6ie7loq><figcaption data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Money flow</h3><p data-astro-cid-w6ie7loq>Income meets in the middle, then splits into spending and what you kept. <span class="plus-mark">Plus</span></p></figcaption><div class="phone" data-screen="money-flow" style="--screen-width: 440; --screen-height: 956" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/money-flow-parchment-light.DlXUw9aQ.webp" alt="Money flow in Parchment, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/money-flow-parchment-dark.lLFmwvKT.webp" alt="Money flow in Parchment, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/money-flow-banknote-light.D8BGCU1k.webp" alt="Money flow in Banknote, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/money-flow-banknote-dark.BZR7PEkS.webp" alt="Money flow in Banknote, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/money-flow-aurora-light.SfZKnlQM.webp" alt="Money flow in Aurora, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/money-flow-aurora-dark.BoDCsozQ.webp" alt="Money flow in Aurora, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/money-flow-ledger-light.BBDdv2WT.webp" alt="Money flow in Ledger, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/money-flow-ledger-dark.6Eko7pr8.webp" alt="Money flow in Ledger, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/money-flow-coin-light.CCYJxJHp.webp" alt="Money flow in Coin, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/money-flow-coin-dark.DsjHzW_G.webp" alt="Money flow in Coin, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/money-flow-dusk-light.CQ1IN3fc.webp" alt="Money flow in Dusk, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/money-flow-dusk-dark.cdFuJijW.webp" alt="Money flow in Dusk, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe></div></div></figure></li><li data-astro-cid-w6ie7loq><figure data-astro-cid-w6ie7loq><figcaption data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Recurring rules</h3><p data-astro-cid-w6ie7loq>Rent, salary, a subscription: a rule writes its transaction on schedule and shows what&#39;s next.</p></figcaption><div class="phone" data-screen="recurring-rule" style="--screen-width: 440; --screen-height: 956" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/recurring-rule-parchment-light.CxptO73v.webp" alt="Recurring rules in Parchment, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/recurring-rule-parchment-dark.Cdice2il.webp" alt="Recurring rules in Parchment, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/recurring-rule-banknote-light.BZMq4HaZ.webp" alt="Recurring rules in Banknote, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/recurring-rule-banknote-dark.9Bcfip_Q.webp" alt="Recurring rules in Banknote, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/recurring-rule-aurora-light.ZowB2jHk.webp" alt="Recurring rules in Aurora, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/recurring-rule-aurora-dark.BRKTdshK.webp" alt="Recurring rules in Aurora, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/recurring-rule-ledger-light.fj9Bm32t.webp" alt="Recurring rules in Ledger, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/recurring-rule-ledger-dark.zZrxv9-k.webp" alt="Recurring rules in Ledger, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/recurring-rule-coin-light.Ct0rnLzn.webp" alt="Recurring rules in Coin, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/recurring-rule-coin-dark.CT2UWBhG.webp" alt="Recurring rules in Coin, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/recurring-rule-dusk-light.Du_PBVON.webp" alt="Recurring rules in Dusk, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/recurring-rule-dusk-dark.DROaAaBn.webp" alt="Recurring rules in Dusk, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe></div></div></figure></li><li data-astro-cid-w6ie7loq><figure data-astro-cid-w6ie7loq><figcaption data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Search</h3><p data-astro-cid-w6ie7loq>Any transaction, by what it says, when it was, how much, and how it was paid.</p></figcaption><div class="phone" data-screen="search" style="--screen-width: 440; --screen-height: 956" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/search-parchment-light.BXaH3brT.webp" alt="Search in Parchment, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/search-parchment-dark.DScsAslh.webp" alt="Search in Parchment, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/search-banknote-light.BZmLJdPi.webp" alt="Search in Banknote, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/search-banknote-dark.DBrux0c4.webp" alt="Search in Banknote, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/search-aurora-light.tmm-MimZ.webp" alt="Search in Aurora, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/search-aurora-dark.DfoOanZN.webp" alt="Search in Aurora, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/search-ledger-light.Bv0uDHzh.webp" alt="Search in Ledger, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/search-ledger-dark.C8JNnQBk.webp" alt="Search in Ledger, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/search-coin-light.BWdkBqmT.webp" alt="Search in Coin, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/search-coin-dark.CLrpngJt.webp" alt="Search in Coin, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/search-dusk-light.SusxpdFF.webp" alt="Search in Dusk, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/search-dusk-dark.DSJpbyY4.webp" alt="Search in Dusk, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe></div></div></figure></li></ul></section><section id="sets" class="section" data-enter aria-labelledby="sets-title" data-astro-cid-w6ymvdtg><h2 id="sets-title" data-astro-cid-w6ymvdtg>Color sets</h2><p class="muted" data-astro-cid-w6ie7loq>Six to wear, each with a look of its own. Pick one and the page wears it.</p><astro-island uid="Z12ADeT" prefix="r2" component-url="/meeney/_astro/SetPicker.BYtGhSMs.js" component-export="SetPicker" renderer-url="/meeney/_astro/client.EoSUrE1U.js" props="{&quot;sets&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;parchment&quot;],&quot;name&quot;:[0,&quot;Parchment&quot;],&quot;tagline&quot;:[0,&quot;Amber tape on parchment&quot;],&quot;story&quot;:[0,&quot;The set the app wears today, warmed up: amber tape on parchment, a bottle-green well for the month&#39;s figures, and the same green turned to amber at night.&quot;],&quot;plus&quot;:[0,false]}],[0,{&quot;id&quot;:[0,&quot;banknote&quot;],&quot;name&quot;:[0,&quot;Banknote&quot;],&quot;tagline&quot;:[0,&quot;A ¥10,000 note under a loupe&quot;],&quot;story&quot;:[0,&quot;A ¥10,000 note under a loupe: intaglio ink pressed into cotton paper, a teal underprint, and the vermilion of a hanko for what went out. At night the note lies in a leather wallet, and the month&#39;s figures are printed on the note itself.&quot;],&quot;plus&quot;:[0,true]}],[0,{&quot;id&quot;:[0,&quot;aurora&quot;],&quot;name&quot;:[0,&quot;Aurora&quot;],&quot;tagline&quot;:[0,&quot;A slow northern sky&quot;],&quot;story&quot;:[0,&quot;A month watched from the far north. By day the blue hour before dawn, peach and pale blue high in the sky; by night the aurora moving slowly over deep navy, with the month&#39;s figures on a patch of it.&quot;],&quot;plus&quot;:[0,true]}],[0,{&quot;id&quot;:[0,&quot;ledger&quot;],&quot;name&quot;:[0,&quot;Ledger&quot;],&quot;tagline&quot;:[0,&quot;The bookkeeper&#39;s book&quot;],&quot;story&quot;:[0,&quot;The bookkeeper&#39;s ledger: green paper, blue-black ink for what came in and a red pencil for what went out, the month&#39;s figures on the bottle-green cloth of the cover. At night the book is closed, the cloth is the page, and the figures are stamped in gold foil.&quot;],&quot;plus&quot;:[0,true]}],[0,{&quot;id&quot;:[0,&quot;coin&quot;],&quot;name&quot;:[0,&quot;Coin&quot;],&quot;tagline&quot;:[0,&quot;Loose change, copper and pewter&quot;],&quot;story&quot;:[0,&quot;Loose change. Brushed pewter by day and gunmetal by night, steel-blue chrome, copper for what leaves the hand and verdigris, copper gone green with time, for what comes back. A sheen turns slowly across the month&#39;s figures, as light does across a coin.&quot;],&quot;plus&quot;:[0,true]}],[0,{&quot;id&quot;:[0,&quot;dusk&quot;],&quot;name&quot;:[0,&quot;Dusk&quot;],&quot;tagline&quot;:[0,&quot;Bangkok at the blue hour&quot;],&quot;story&quot;:[0,&quot;Bangkok at the blue hour. Lavender-white in the morning, indigo at night, saffron robes and gold leaf for the chrome, jade for what came in and chili for what went out. The glow at the top of the page breathes slowly between saffron and rose, as the sky does after the sun has gone.&quot;],&quot;plus&quot;:[0,true]}]]],&quot;icon&quot;:[0,{&quot;canvas&quot;:[0,100],&quot;bars&quot;:[1,[[0,{&quot;x&quot;:[0,24],&quot;y&quot;:[0,35],&quot;width&quot;:[0,20],&quot;height&quot;:[0,11],&quot;radius&quot;:[0,4],&quot;flow&quot;:[0,&quot;expense&quot;],&quot;opacity&quot;:[0,1]}],[0,{&quot;x&quot;:[0,46],&quot;y&quot;:[0,35],&quot;width&quot;:[0,16],&quot;height&quot;:[0,11],&quot;radius&quot;:[0,4],&quot;flow&quot;:[0,&quot;expense&quot;],&quot;opacity&quot;:[0,0.7]}],[0,{&quot;x&quot;:[0,64],&quot;y&quot;:[0,35],&quot;width&quot;:[0,12],&quot;height&quot;:[0,11],&quot;radius&quot;:[0,4],&quot;flow&quot;:[0,&quot;expense&quot;],&quot;opacity&quot;:[0,0.45]}],[0,{&quot;x&quot;:[0,24],&quot;y&quot;:[0,54],&quot;width&quot;:[0,26],&quot;height&quot;:[0,11],&quot;radius&quot;:[0,4],&quot;flow&quot;:[0,&quot;income&quot;],&quot;opacity&quot;:[0,1]}],[0,{&quot;x&quot;:[0,52],&quot;y&quot;:[0,54],&quot;width&quot;:[0,9],&quot;height&quot;:[0,11],&quot;radius&quot;:[0,4],&quot;flow&quot;:[0,&quot;income&quot;],&quot;opacity&quot;:[0,0.6]}]]]}],&quot;stamp&quot;:[0,{&quot;text&quot;:[0,&quot;Plus&quot;],&quot;label&quot;:[0,&quot;Part of Plus&quot;]}],&quot;data-astro-cid-w6ie7loq&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;SetPicker&quot;,&quot;value&quot;:true}" await-children><div class="set-picker"><div role="radiogroup" aria-label="Color set" class="swatches"><button type="button" role="radio" aria-checked="true" aria-label="Parchment" tabindex="0" data-set="parchment" class="swatch"><span class="coin-ring" aria-hidden="true"><span class="coin" data-scheme="parchment" data-theme="light"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span><span class="coin" data-scheme="parchment" data-theme="dark"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span></span></button><button type="button" role="radio" aria-checked="false" aria-label="Banknote, Part of Plus" tabindex="-1" data-set="banknote" class="swatch"><span class="coin-ring" aria-hidden="true"><span class="coin" data-scheme="banknote" data-theme="light"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span><span class="coin" data-scheme="banknote" data-theme="dark"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span></span><span class="plus-mark" aria-hidden="true">Plus</span></button><button type="button" role="radio" aria-checked="false" aria-label="Aurora, Part of Plus" tabindex="-1" data-set="aurora" class="swatch"><span class="coin-ring" aria-hidden="true"><span class="coin" data-scheme="aurora" data-theme="light"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span><span class="coin" data-scheme="aurora" data-theme="dark"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span></span><span class="plus-mark" aria-hidden="true">Plus</span></button><button type="button" role="radio" aria-checked="false" aria-label="Ledger, Part of Plus" tabindex="-1" data-set="ledger" class="swatch"><span class="coin-ring" aria-hidden="true"><span class="coin" data-scheme="ledger" data-theme="light"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span><span class="coin" data-scheme="ledger" data-theme="dark"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span></span><span class="plus-mark" aria-hidden="true">Plus</span></button><button type="button" role="radio" aria-checked="false" aria-label="Coin, Part of Plus" tabindex="-1" data-set="coin" class="swatch"><span class="coin-ring" aria-hidden="true"><span class="coin" data-scheme="coin" data-theme="light"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span><span class="coin" data-scheme="coin" data-theme="dark"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span></span><span class="plus-mark" aria-hidden="true">Plus</span></button><button type="button" role="radio" aria-checked="false" aria-label="Dusk, Part of Plus" tabindex="-1" data-set="dusk" class="swatch"><span class="coin-ring" aria-hidden="true"><span class="coin" data-scheme="dusk" data-theme="light"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span><span class="coin" data-scheme="dusk" data-theme="dark"><svg viewBox="0 0 100 100"><rect x="24" y="35" width="20" height="11" rx="4" class="bar-expense" opacity="1"></rect><rect x="46" y="35" width="16" height="11" rx="4" class="bar-expense" opacity="0.7"></rect><rect x="64" y="35" width="12" height="11" rx="4" class="bar-expense" opacity="0.45"></rect><rect x="24" y="54" width="26" height="11" rx="4" class="bar-income" opacity="1"></rect><rect x="52" y="54" width="9" height="11" rx="4" class="bar-income" opacity="0.6"></rect></svg></span></span><span class="plus-mark" aria-hidden="true">Plus</span></button></div><div class="chosen" aria-live="polite"><div class="chosen-title"><h3 class="chosen-name">Parchment</h3><p class="chosen-tagline">Amber tape on parchment</p></div><p class="chosen-story">The set the app wears today, warmed up: amber tape on parchment, a bottle-green well for the month&#x27;s figures, and the same green turned to amber at night.</p></div></div><!--astro:end--></astro-island><div class="stage" data-astro-cid-w6ie7loq><div class="phone cropped" data-screen="home" style="--screen-width: 440; --screen-height: 602.28" data-astro-cid-ykln7coe><div class="screen" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="light" src="/meeney/_astro/home-parchment-light.CCuTd7zu.webp" alt="Home in Parchment, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="parchment" data-look="dark" src="/meeney/_astro/home-parchment-dark.zF2iKv_J.webp" alt="Home in Parchment, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="light" src="/meeney/_astro/home-banknote-light.CxlZDKWY.webp" alt="Home in Banknote, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="banknote" data-look="dark" src="/meeney/_astro/home-banknote-dark.DA_cJyiK.webp" alt="Home in Banknote, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="light" src="/meeney/_astro/home-aurora-light.BiuGGewm.webp" alt="Home in Aurora, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="aurora" data-look="dark" src="/meeney/_astro/home-aurora-dark.CEhvkz2A.webp" alt="Home in Aurora, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="light" src="/meeney/_astro/home-ledger-light.Bxl-kH2g.webp" alt="Home in Ledger, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="ledger" data-look="dark" src="/meeney/_astro/home-ledger-dark.DN12mxQ5.webp" alt="Home in Ledger, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="light" src="/meeney/_astro/home-coin-light.BXRW-fYS.webp" alt="Home in Coin, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="coin" data-look="dark" src="/meeney/_astro/home-coin-dark.BshH7bTZ.webp" alt="Home in Coin, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="light" src="/meeney/_astro/home-dusk-light.BYXN-as5.webp" alt="Home in Dusk, light" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe><img data-screenshot data-set="dusk" data-look="dark" src="/meeney/_astro/home-dusk-dark.Bwxm8XgO.webp" alt="Home in Dusk, dark" width="440" height="956" loading="lazy" decoding="async" data-astro-cid-ykln7coe></div></div></div></section><section id="private" class="section" data-enter aria-labelledby="private-title" data-astro-cid-w6ymvdtg><h2 id="private-title" data-astro-cid-w6ymvdtg>Private by design</h2><ul class="rows" data-astro-cid-w6ie7loq><li data-astro-cid-w6ie7loq><strong data-astro-cid-w6ie7loq>No account.</strong> There is nothing to sign up for and no one to sign in as.</li><li data-astro-cid-w6ie7loq><strong data-astro-cid-w6ie7loq>No tracking.</strong> Meeney has no analytics in it, and neither does this page.</li><li data-astro-cid-w6ie7loq><strong data-astro-cid-w6ie7loq>Your ledger stays on your phone.</strong> Every transaction is kept there and nowhere else.</li><li data-astro-cid-w6ie7loq><strong data-astro-cid-w6ie7loq>Backup is a file you own.</strong> Save it where you like, and bring it back on any phone.</li></ul></section><section id="plus" class="section" data-enter aria-labelledby="plus-title" data-astro-cid-w6ymvdtg><h2 id="plus-title" data-astro-cid-w6ymvdtg>Plus</h2><p class="muted" data-astro-cid-w6ie7loq>Free keeps your whole ledger. Plus lets you see further, remember more, and make Meeney yours.</p><div class="plus-groups" data-astro-cid-w6ie7loq><div class="plus-group" data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>See further</h3><ul class="features" data-astro-cid-w6ie7loq><li data-astro-cid-w6ie7loq>Custom periods, any span of days</li><li data-astro-cid-w6ie7loq>Breakdown by title and by payment method</li><li data-astro-cid-w6ie7loq>Where the money went</li><li data-astro-cid-w6ie7loq>Spending by month</li><li data-astro-cid-w6ie7loq>Income and expense by month</li><li data-astro-cid-w6ie7loq>Net balance over time</li></ul></div><div class="plus-group" data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Remember more</h3><ul class="features" data-astro-cid-w6ie7loq><li data-astro-cid-w6ie7loq>Rule reminders, at your reminder time</li><li data-astro-cid-w6ie7loq>Adding receipts to transactions</li></ul></div><div class="plus-group" data-astro-cid-w6ie7loq><h3 data-astro-cid-w6ie7loq>Make it yours</h3><ul class="features" data-astro-cid-w6ie7loq><li data-astro-cid-w6ie7loq>Five more color sets</li><li data-astro-cid-w6ie7loq>Your own color sets</li></ul></div></div><ul class="rows plans" aria-label="Plus plan" data-astro-cid-w6ie7loq><li data-astro-cid-w6ie7loq><strong data-astro-cid-w6ie7loq>Monthly</strong> <span class="muted" data-astro-cid-w6ie7loq>First month free</span></li><li data-astro-cid-w6ie7loq><strong data-astro-cid-w6ie7loq>Yearly</strong> <span class="muted" data-astro-cid-w6ie7loq>First month free</span></li><li data-astro-cid-w6ie7loq><strong data-astro-cid-w6ie7loq>Pay once</strong> <span class="muted" data-astro-cid-w6ie7loq>One payment. Plus stays on.</span></li></ul></section><section id="get" class="section" data-enter aria-labelledby="get-title" data-astro-cid-w6ymvdtg><h2 id="get-title" data-astro-cid-w6ymvdtg>Get it</h2><p class="coming" data-astro-cid-w6ie7loq>Coming to the App Store and Google Play.</p></section></div></main></body></html><script type="module">var e=document.querySelectorAll(`[data-enter]`),t=!0,n=new IntersectionObserver(e=>{for(let r of e){if(!r.isIntersecting)continue;let e=r.target;t?(e.style.transition=`none`,e.classList.add(`entered`),e.offsetHeight,e.style.transition=``):e.classList.add(`entered`),n.unobserve(e)}t=!1},{rootMargin:`0px 0px -64px 0px`});for(let t of e)n.observe(t);</script>
