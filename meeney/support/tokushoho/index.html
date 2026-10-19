@@ -311,15 +311,33 @@
 /* Banknote: guilloché on the balance card, two ring systems from either end making a moiré. */
 [data-scheme="banknote"] {
   --balance-image:
-    repeating-radial-gradient(circle at 108% 50%, transparent 0 5px, rgba(255, 255, 255, 0.055) 5px 6px),
-    repeating-radial-gradient(circle at -8% 50%, transparent 0 5px, rgba(255, 255, 255, 0.055) 5px 6px);
+    repeating-radial-gradient(
+      circle at 108% 50%,
+      transparent 0 5px,
+      rgba(255, 255, 255, 0.055) 5px 6px
+    ),
+    repeating-radial-gradient(
+      circle at -8% 50%,
+      transparent 0 5px,
+      rgba(255, 255, 255, 0.055) 5px 6px
+    );
   --balance-ring: rgba(255, 255, 255, 0.08);
 }
 [data-scheme="banknote"][data-theme="dark"] {
   /* The note itself: dark rings on cotton, and a fine security thread of teal. */
   --balance-image:
-    linear-gradient(to right, transparent calc(72% - 1px), rgba(35, 118, 111, 0.35) calc(72% - 1px), rgba(35, 118, 111, 0.35) calc(72% + 1px), transparent calc(72% + 1px)),
-    repeating-radial-gradient(circle at 108% 50%, transparent 0 5px, rgba(53, 41, 59, 0.07) 5px 6px),
+    linear-gradient(
+      to right,
+      transparent calc(72% - 1px),
+      rgba(35, 118, 111, 0.35) calc(72% - 1px),
+      rgba(35, 118, 111, 0.35) calc(72% + 1px),
+      transparent calc(72% + 1px)
+    ),
+    repeating-radial-gradient(
+      circle at 108% 50%,
+      transparent 0 5px,
+      rgba(53, 41, 59, 0.07) 5px 6px
+    ),
     repeating-radial-gradient(circle at -8% 50%, transparent 0 5px, rgba(53, 41, 59, 0.07) 5px 6px);
   --balance-ring: rgba(53, 41, 59, 0.12);
 }
@@ -384,7 +402,12 @@
     radial-gradient(75% 40% at 88% 2%, var(--sky-b), transparent 72%),
     radial-gradient(60% 34% at 55% 22%, var(--sky-c), transparent 72%);
   --island-ring: color-mix(in srgb, var(--ink) 10%, transparent);
-  --balance-image: linear-gradient(135deg, color-mix(in srgb, var(--sky-b) 34%, transparent), transparent 55%, color-mix(in srgb, var(--sky-a) 22%, transparent));
+  --balance-image: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sky-b) 34%, transparent),
+    transparent 55%,
+    color-mix(in srgb, var(--sky-a) 22%, transparent)
+  );
   --balance-ring: rgba(255, 255, 255, 0.12);
 }
 [data-scheme="aurora"][data-theme="dark"] {
@@ -397,7 +420,12 @@
     radial-gradient(78% 42% at 90% 0%, var(--sky-b), transparent 72%),
     radial-gradient(62% 34% at 55% 24%, var(--sky-c), transparent 72%);
   --island-ring: rgba(255, 255, 255, 0.09);
-  --balance-image: linear-gradient(135deg, color-mix(in srgb, var(--sky-a) 45%, transparent), transparent 55%, color-mix(in srgb, var(--sky-c) 40%, transparent));
+  --balance-image: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sky-a) 45%, transparent),
+    transparent 55%,
+    color-mix(in srgb, var(--sky-c) 40%, transparent)
+  );
   --balance-ring: rgba(255, 255, 255, 0.1);
 }
 
@@ -412,7 +440,14 @@
   --page-image:
     repeating-linear-gradient(45deg, rgba(235, 232, 214, 0.028) 0 1px, transparent 1px 5px),
     repeating-linear-gradient(-45deg, rgba(235, 232, 214, 0.028) 0 1px, transparent 1px 5px);
-  --balance-image: linear-gradient(135deg, #efcf82 0%, #d8ad4e 28%, #b98a2b 54%, #e2bc63 80%, #f3d892 100%);
+  --balance-image: linear-gradient(
+    135deg,
+    #efcf82 0%,
+    #d8ad4e 28%,
+    #b98a2b 54%,
+    #e2bc63 80%,
+    #f3d892 100%
+  );
   --balance-ring: rgba(255, 240, 200, 0.35);
 }
 
@@ -431,13 +466,29 @@
   --sheen: 20deg;
   animation: sheen-turn 16s linear infinite;
   --balance-image:
-    conic-gradient(from var(--sheen) at 28% 130%, transparent 0deg, rgba(255, 255, 255, 0.11) 28deg, transparent 56deg, transparent 200deg, rgba(255, 255, 255, 0.06) 226deg, transparent 252deg),
+    conic-gradient(
+      from var(--sheen) at 28% 130%,
+      transparent 0deg,
+      rgba(255, 255, 255, 0.11) 28deg,
+      transparent 56deg,
+      transparent 200deg,
+      rgba(255, 255, 255, 0.06) 226deg,
+      transparent 252deg
+    ),
     linear-gradient(160deg, #3b3e45 0%, #24262b 45%, #33363d 100%);
   --balance-ring: rgba(255, 255, 255, 0.1);
 }
 [data-scheme="coin"][data-theme="dark"] {
   --balance-image:
-    conic-gradient(from var(--sheen) at 28% 130%, transparent 0deg, rgba(255, 240, 220, 0.2) 28deg, transparent 56deg, transparent 200deg, rgba(255, 240, 220, 0.1) 226deg, transparent 252deg),
+    conic-gradient(
+      from var(--sheen) at 28% 130%,
+      transparent 0deg,
+      rgba(255, 240, 220, 0.2) 28deg,
+      transparent 56deg,
+      transparent 200deg,
+      rgba(255, 240, 220, 0.1) 226deg,
+      transparent 252deg
+    ),
     linear-gradient(150deg, #a85a2e 0%, #8a4520 42%, #6b3314 72%, #a25a2c 100%);
   --balance-ring: rgba(255, 220, 190, 0.28);
 }
@@ -470,10 +521,18 @@
   --glow: #f7c98a;
   animation: dusk-day 18s ease-in-out infinite;
   --page-image:
-    radial-gradient(80% 42% at 18% -8%, color-mix(in srgb, var(--glow) 60%, transparent), transparent 70%),
+    radial-gradient(
+      80% 42% at 18% -8%,
+      color-mix(in srgb, var(--glow) 60%, transparent),
+      transparent 70%
+    ),
     radial-gradient(60% 34% at 92% -2%, rgba(203, 190, 240, 0.7), transparent 70%);
   --balance-image:
-    radial-gradient(70% 90% at 100% 0%, color-mix(in srgb, var(--glow) 42%, transparent), transparent 70%),
+    radial-gradient(
+      70% 90% at 100% 0%,
+      color-mix(in srgb, var(--glow) 42%, transparent),
+      transparent 70%
+    ),
     linear-gradient(150deg, #221d45 0%, #2b2058 55%, #3c2354 100%);
   --balance-ring: rgba(255, 243, 227, 0.1);
 }
@@ -481,10 +540,18 @@
   --glow: #f2a740;
   animation-name: dusk-night;
   --page-image:
-    radial-gradient(85% 42% at 14% -10%, color-mix(in srgb, var(--glow) 30%, transparent), transparent 70%),
+    radial-gradient(
+      85% 42% at 14% -10%,
+      color-mix(in srgb, var(--glow) 30%, transparent),
+      transparent 70%
+    ),
     radial-gradient(60% 32% at 92% -4%, rgba(90, 60, 140, 0.5), transparent 70%);
   --balance-image:
-    radial-gradient(70% 90% at 100% 0%, color-mix(in srgb, var(--glow) 55%, transparent), transparent 70%),
+    radial-gradient(
+      70% 90% at 100% 0%,
+      color-mix(in srgb, var(--glow) 55%, transparent),
+      transparent 70%
+    ),
     linear-gradient(150deg, #f6b64e 0%, #e28a1c 55%, #f4c469 100%);
   --balance-ring: rgba(255, 235, 200, 0.3);
 }
